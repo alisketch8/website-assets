@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: transparent; display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh; }
+    canvas { width: 100%; height: 100%; }
+  </style>
+  <script src="https://unpkg.com/@rive-app/webgl2@latest"></script>
+</head>
+<body>
+  <canvas id="rive-canvas"></canvas>
+  <script>
+    const canvas = document.getElementById("rive-canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    new rive.Rive({
+      src: "https://cdn.jsdelivr.net/gh/alisketch8/website-assets@main/lyla_animation_test_v01.riv",
+      canvas: canvas,
+      autoplay: true,
+      fitMode: rive.Fit.Contain,
+    });
+  </script>
+</body>
+</html>
